@@ -5,8 +5,8 @@ automata_regex = re.compile(r'\(\{([a-z],?\s?)+\},\s\{\s?((q([0-9]|f)),?\s?)+\},
 trasitions_regex = re.compile(r'(q([0-9]|f)),\s([a-z]),\s(q([0-9]|f))\n?')
 
 #Lê o conteúdo de um arquivo:
-def read_content():
-	with open('AFD.txt','r') as f:
+def read_content(file_name):
+	with open(file_name,'r') as f:
 		content = f.read()
 		return content
 
