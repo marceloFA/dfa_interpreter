@@ -72,8 +72,8 @@ def parse_to_automata():
 
 #Exemplo de como o autômato deve ficar após passar pelo parser:
 dfa = {0:{'0':0, '1':1},
-       1:{'0':2, '1':0},
-       2:{'0':1, '1':2}}
+       1:{'0':'f', '1':0},
+       'f':{'0':1, '1':'f'}}
 
 
 #A função que processa o autômato:
