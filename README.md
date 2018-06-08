@@ -17,3 +17,7 @@ Adicione os arquivos .txt escritos ao repośitório para que os testes possam se
 	3- execute o comando*python3 final.py*;
 	4- passe o nome do arquivo, que deve estar presente no mesmo diretório;
 	5- insira a palavra a ser lida;
+
+# Links úteis:
+	- Como usar o GIT e o Github:
+		https://br.udacity.com/blog/post/tutorial-iniciantes-git-github
