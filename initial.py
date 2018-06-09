@@ -79,8 +79,19 @@ dfa = {0:{'0':0, '1':1},
 #A função que processa o autômato:
 def processa(transicoes,inicial,aceitos,s):
     estado = inicial
+    #para cada símbolo na palavra:
     for c in s:
-        estado = transicoes[estado][c]
+    	#Se o estado tem transições:
+        if estado in list(transicoes.keys()):
+        	#se tiver uma transição que processa o símbolo atual:
+        	if c in list(transicoes[estado].keys()):
+        		estado = transicoes[estado][c]
+        	else:
+        		return False
+        else:
+        	return False
+
+
     return estado in aceitos
 
 

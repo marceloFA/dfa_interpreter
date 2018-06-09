@@ -12,10 +12,11 @@ Adicione os arquivos .txt escritos ao repośitório para que os testes possam se
 
 ## Como rodar o parser:
 	0.1 - Certifique-se que você tem python3 instalado em sua máquina;
-	0.2 - Clone o repositório para sua máquina local;
+	0.2 - instale o módulo 'termcolor' com  o comando *pip install termcolor*;
+	0.4 - Clone o repositório para sua máquina local;
 	1- Abra o terminal;
 	2- Vá para o diretório dos arquivos;
-	3- execute o comando*python3 final.py*;
+	3- execute o comando *python3 final.py*;
 	4- passe o nome do arquivo, que deve estar presente no mesmo diretório;
 	5- insira a palavra a ser lida;
 
