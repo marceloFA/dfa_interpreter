@@ -1,3 +1,4 @@
+import json
 #Módulo de expressões regulares
 import re
 #Faz prints coloridos
@@ -60,17 +61,22 @@ def parse_transitions(transitions):
 #A função que processa o autômato:
 def process(transitions,initial,finals,word):
     state = initial
+    c = 1
     #Para cada símbolo na palavra:
     for s in word:
         #Se o estado possui transições:
         if state in list(transitions.keys()):
             #Se houver uma transição que processa o símbolo atual:
             if s in list(transitions[state].keys()):
+                print("tá em q"+state+" lê '"+s+"'("+str(c)+") e vai para q"+transitions[state][s])
                 state = transitions[state][s]
             else:
+                print("não havia transição que processasse o símbolo '"+s+"'("+str(c)+")")
                 return False
         else:
+            print("O estado q"+state+" não possui transições, parou em '"+s+"'("+str(c)+")")
             return False
+        c = c+1
     return state in finals
 
 
@@ -93,6 +99,14 @@ def main(file_name,word):
     #Tranições para dicionário:
     transitions = parse_transitions(transitions)
 
+    print('\n\n'+'As transições desse autômato são:\n')
+    print(json.dumps(transitions, indent=4, sort_keys=True))
+    print('\n\n')
+    print('O estado incial é: q'+initial+'\n')
+    print("Os estados finais desse atômato são: "+str(finals)+"\n")
+    print("O processamento para a palavra '"+word+"' é esse: ")
+
+
     if process(transitions,initial,finals,word):
         print("A palavra foi "+ colored('aceita', 'green')+ " ao final do processamento!")
     else:
@@ -104,5 +118,6 @@ def main(file_name,word):
 #O script final:
 print("Insira o nome do arquivo a ser processado, incluindo extensão:")
 file_name = input("(use como exemplo de testes AFD.txt)\n")
+
 word = input("Insira a palavra a ser processada:")
 main(file_name,word)
